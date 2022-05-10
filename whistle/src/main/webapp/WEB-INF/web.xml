@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>whistle</display-name>
+  
+  <!-- 서블릿 정의 -->
+  <servlet>
+  	<servlet-name>loginAjax</servlet-name>
+  	<servlet-class>com.githrd.test.LoginAjax</servlet-class>
+  </servlet>
+  
+  <!-- 서블릿 매핑 -->
+  <servlet-mapping>
+  	<servlet-name>loginAjax</servlet-name>
+  	<url-pattern>/test/loginAjax.pink</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
