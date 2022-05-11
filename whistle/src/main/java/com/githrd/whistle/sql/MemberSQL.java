@@ -1,4 +1,4 @@
-package com.githrd.test.sql;
+package com.githrd.whistle.sql;
 
 public class MemberSQL {
 	public final int SEL_LOGIN_CNT 		= 1001;

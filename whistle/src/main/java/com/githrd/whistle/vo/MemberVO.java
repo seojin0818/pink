@@ -1,19 +1,20 @@
-package com.githrd.test.VO;
+package com.githrd.whistle.vo;
 
 public class MemberVO {
-	private int mno, avt;
-	private String name, id, mail, tel, joindate, gen;
+	private int mno, ano;
+	private String name, id, mail, tel, joindate, gen, savename;
+	
 	public int getMno() {
 		return mno;
 	}
 	public void setMno(int mno) {
 		this.mno = mno;
 	}
-	public int getAvt() {
-		return avt;
+	public int getAno() {
+		return ano;
 	}
-	public void setAvt(int avt) {
-		this.avt = avt;
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 	public String getName() {
 		return name;
@@ -51,12 +52,10 @@ public class MemberVO {
 	public void setGen(String gen) {
 		this.gen = gen;
 	}
-	
-	@Override
-	public String toString() {
-		return "MemberVO [mno=" + mno + ", avt=" + avt + ", name=" + name + ", id=" + id + ", mail=" + mail + ", tel="
-				+ tel + ", joindate=" + joindate + ", gen=" + gen + "]";
+	public String getSavename() {
+		return savename;
 	}
-	
-	
+	public void setSavename(String savename) {
+		this.savename = savename;
+	}
 }

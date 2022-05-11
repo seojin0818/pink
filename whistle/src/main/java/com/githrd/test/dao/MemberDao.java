@@ -4,6 +4,7 @@ import java.sql.*;
 
 import com.githrd.test.db.*;
 import com.githrd.test.sql.*;
+import com.githrd.test.vo.*;
 
 public class MemberDao {
 	private JennieJDBC db;
@@ -50,26 +51,36 @@ public class MemberDao {
 		return cnt;
 	}
 	
-	public int getInfoCnt(String mno, String avt, String name, String id, String mail, String tel, String joindate, String gen) {
-		int cnt = 0;
+	// 아이디로 정보 조회 전담 처리함수
+	public MemberVO getMembInfo(String id) {
+		// 반환값 변수
+		MemberVO mVO = new MemberVO();
 		
+		// 커넥션 연결
 		con = db.getCon();
-		String sql = mSQL.getSQL(mSQL.SEL_INFO);
+		
+		// 질의명령
+		String sql = mSQL.getSQL(mSQL.SEL_MEMBER_INFO);
+		
+		// pstmt
 		pstmt = db.getPstmt(con, sql);
+		
 		try {
-			
-			pstmt.setString(1, mno);
-			pstmt.setString(2, avt);
-			pstmt.setString(3, name);
-			pstmt.setString(4, id);
-			pstmt.setString(5, mail);
-			pstmt.setString(7, tel);
-			pstmt.setString(8, joindate);
-			pstmt.setString(9, gen);
-			
+			// 질의명령 완성하고
+			pstmt.setString(1, id);
+			// 질의명령 보내고 결과 받고
 			rs = pstmt.executeQuery();
+			// 데이터 꺼내고
 			rs.next();
-			cnt = rs.getInt("cnt");
+			int mno = rs.getInt("mno");
+			String name = rs.getString("name");
+			String sid = rs.getString("id");
+			String mail = rs.getString("mail");
+			String tel = rs.getString("tel");
+			String gen = rs.getString("gen");
+			String joindate = rs.getString("joindate");
+			int ano = rs.getInt("ano");
+			String savename = rs.getString("savename");
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -77,7 +88,7 @@ public class MemberDao {
 			db.close(pstmt);
 			db.close(con);
 		}
-		return cnt;
+		return mVO;
 	}
 
 }
