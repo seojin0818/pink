@@ -2,7 +2,7 @@ package com.githrd.whistle.vo;
 
 public class MemberVO {
 	private int mno, ano;
-	private String name, id, mail, tel, joindate, gen, savename;
+	private String name, id, pw, sdate, mail, tel, joindate, gen, savename;
 	
 	public int getMno() {
 		return mno;
@@ -58,4 +58,17 @@ public class MemberVO {
 	public void setSavename(String savename) {
 		this.savename = savename;
 	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	public String getSdate() {
+		return sdate;
+	}
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
+	}
+	
 }
