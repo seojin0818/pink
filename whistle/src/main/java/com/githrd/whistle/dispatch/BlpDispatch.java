@@ -142,10 +142,13 @@ public class BlpDispatch extends HttpServlet {
 		// 위에서 map에 등록된 것을 이용해서 꺼내면 됨
 		BlpInter blp = map.get(real);
 		
+		// 응답문서 인코딩
+		resp.setCharacterEncoding("UTF-8");
+		
 		// 실행하고
 		String view = blp.exec(req, resp);
 		
-		bool = (Boolean)req.getAttribute("isRedirect");
+		bool = (Boolean) req.getAttribute("isRedirect");
 		
 		if(bool == null) {
 			// 이 경우는 비동기통신이 처리되어야 함

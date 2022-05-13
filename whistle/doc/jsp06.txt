@@ -66,7 +66,7 @@
 			<Resource
 				name="jdbc/TestDB"
 				==> JSP에서 이 자원(커넥션 풀)을 사용할 때 구분할 이름
-				autho="Container"
+				auth="Container"
 				==> 등록된 자원을 관리하는 객체이름
 					반드시 "Container"라고 기술해야 함
 				type="javax.sql.DataSource"

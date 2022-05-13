@@ -146,4 +146,75 @@ public class MemberDao {
 		return list;
 		
 	}
+	
+	// 아이디 카운트 조회 전담 처리함수
+	public int getIdCount(String id) {
+		// 반환값 변수
+		int cnt = 0;
+		
+		// 커넥션
+		con = db.getCon();
+		// 질의명령
+		String sql = mSQL.getSQL(mSQL.SEL_ID_CNT);
+		// 명령전달도구
+		pstmt = db.getPSTMT(con, sql);
+		try{
+			// 질의명령 완성하고
+			pstmt.setString(1, id);
+			// 질의명령 보내고 결과 받고
+			rs = pstmt.executeQuery();
+			// 레코드 포인터 한 줄 내리고
+			rs.next();
+			// 데이터 꺼내서 변수에 담고
+			cnt = rs.getInt("cnt");
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		// 데이터 반환하고
+		return cnt;
+	}
+	
+	// 회원 목록 조회 전담 처리함수
+	public ArrayList<MemberVO> getMemberList(){
+		// 반환값 변수
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		
+		// 할 일
+		// 커넥션
+		con = db.getCon();
+		// 질의명령
+		String sql = mSQL.getSQL(mSQL.SEL_MEMBER_LIST);
+		// 명령전달도구
+		stmt = db.getSTMT(con);
+		try{
+			// 질의명령 보내고 결과 받고
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				// 데이터 꺼내서 VO에 담고
+				MemberVO mVO = new MemberVO();
+				
+				int mno = rs.getInt("mno");
+				String name = rs.getString("name");
+				
+				mVO.setMno(mno);
+				mVO.setName(name);
+				// VO 리스트에 채우고
+				list.add(mVO);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(stmt);
+			db.close(con);
+		}
+		
+		
+		// 데이터 반환하고
+		return list;
+	}
 }

@@ -15,4 +15,9 @@ $(document).ready(function(){
 		$('#frm').attr('action', '/whistle/member/loginProc.blp');
 		$('#frm').submit();
 	});
+	
+	// 홈버튼 클릭이벤트
+	$('#hbtn').click(function(){
+		$(location).attr('href', '/whistle/main.blp');
+	});
 });
