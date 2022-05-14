@@ -1,6 +1,7 @@
 package com.githrd.test.dao;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import com.githrd.test.db.*;
 import com.githrd.test.sql.*;
@@ -54,6 +55,8 @@ public class MemberDao {
 	// 아이디로 정보 조회 전담 처리함수
 	public MemberVO getMembInfo(String id) {
 		// 반환값 변수
+//		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		// 회원 한명의 데이터만 생겨날거니까 리스트가 아니고 VO
 		MemberVO mVO = new MemberVO();
 		
 		// 커넥션 연결
@@ -72,15 +75,16 @@ public class MemberDao {
 			rs = pstmt.executeQuery();
 			// 데이터 꺼내고
 			rs.next();
-			int mno = rs.getInt("mno");
-			String name = rs.getString("name");
-			String sid = rs.getString("id");
-			String mail = rs.getString("mail");
-			String tel = rs.getString("tel");
-			String gen = rs.getString("gen");
-			String joindate = rs.getString("joindate");
-			int ano = rs.getInt("ano");
-			String savename = rs.getString("savename");
+			mVO.setMno(rs.getInt("mno"));
+			mVO.setName(rs.getString("name"));
+			mVO.setId(rs.getString("id"));
+			mVO.setMail(rs.getString("mail"));
+			mVO.setTel(rs.getString("tel"));
+			mVO.setGen(rs.getString("gen"));
+			mVO.setJoindate(rs.getString("joindate"));
+			mVO.setAno(rs.getInt("ano"));
+			mVO.setSavename(rs.getString("savename"));
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {

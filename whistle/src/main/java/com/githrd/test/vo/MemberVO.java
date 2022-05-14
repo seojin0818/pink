@@ -58,4 +58,9 @@ public class MemberVO {
 	public void setSavename(String savename) {
 		this.savename = savename;
 	}
+	@Override
+	public String toString() {
+		return "MemberVO [mno=" + mno + ", ano=" + ano + ", name=" + name + ", id=" + id + ", mail=" + mail + ", tel="
+				+ tel + ", joindate=" + joindate + ", gen=" + gen + ", savename=" + savename + "]";
+	}
 }

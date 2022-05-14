@@ -1,0 +1,22 @@
+# /whistle/jin/ 으로 요청하면  /WEB-INF/views/jin/index.jsp 파일을 포워드하는 요청
+------------------------------------------------------------------------------
+#jin 인덱스페이지 요청
+요청내용 : /whistle/jin/
+파라미터 : 없음
+컨트롤러 : com.githrd.whistle.JinIndex
+뷰       : /WEB-INF/views/jin/index.jsp
+------------------------------------------------------------------------------
+#jin login 페이지 요청
+요청내용 : /whistle/jin/login
+파라미터 : 없음
+컨트롤러 : com.githrd.whistle.JinLogin
+뷰       : /WEB-INF/views/jin/member/login.jsp
+------------------------------------------------------------------------------
+#jin login 처리 요청
+요청내용 : /whistle/jin/loginProc
+파라미터 : id, pw
+컨트롤러 : com.githrd.whistle.JinLoginProc
+뷰       :	redirect]
+					성공 :	/whistle/jin/ 
+					실패 :	/whistle/jin/login.jin 
+------------------------------------------------------------------------------

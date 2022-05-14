@@ -149,7 +149,7 @@ $(document).ready(function(){
 					// 로그인 처리를 해줘야하는 경우
 					alert(tid + ' 회원님은 로그인 처리 되었습니다.');
 					// 요청을 새롭게 만들기
-					$(location).attr('href', '/whistle/');
+					$(location).attr('href', '/whistle/test/');
 				} else {
 					// 다시 로그인해야 하는 경우
 					alert('로그인에 실패했습니다. 다시 입력하세요!');

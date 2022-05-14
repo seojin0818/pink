@@ -108,7 +108,7 @@ url : http://localhost/whistle/test/avtInfo.pink?ano=11
 
 # 내정보조회 비동기통신 요청
 
-요청내용 : /whistle/test/myInfo.pink
-파라미터 : id
-컨트롤러 : com.githrd.test.MyInfo
+요청내용 : /whistle/test/myInfoAjax.pink
+파라미터 : 없음
+컨트롤러 : com.githrd.test.MyInfoAjax
 뷰		 : json

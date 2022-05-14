@@ -34,7 +34,7 @@ public class MemberSQL {
 			buff.append("FROM ");
 			buff.append("	member m, avatar ");
 			buff.append("WHERE ");
-			buff.append("	isShow = 'Y' ");
+			buff.append("	m.isShow = 'Y' ");
 			buff.append("	AND avt = ano ");
 			buff.append("	AND id = ? ");
 			break;
