@@ -1,4 +1,4 @@
-package com.githrd.whistle.dispatch;
+package com.githrd.practice.dispatch;
 
 import java.io.*;
 import java.util.*;
@@ -28,7 +28,7 @@ import com.githrd.whistle.controller.*;
  */
 
 // 이 서블릿이 언제 실행될지 url-pattern을 지정하는 부분
-@WebServlet("*.blp")
+@WebServlet("*.bear")
 public class BlpDispatch extends HttpServlet {
 
 	private HashMap<String, BlpInter> map; // 실제 요청 내용과 실제 실행할 객체를 입력할 맵
@@ -53,7 +53,7 @@ public class BlpDispatch extends HttpServlet {
 		try {
 			// 파일을 스트림으로 만들어서
 			String path = this.getClass().getResource("").getPath();
-			path = path + "../resources/blp.properties";
+			path = path + "../resources/bear.properties";
 //			System.out.println("### dispatch path : " + path);
 			fin = new FileInputStream(path);
 			
@@ -159,7 +159,7 @@ public class BlpDispatch extends HttpServlet {
 			resp.sendRedirect(view);
 		} else {
 			// 포워드 시켜야 하는 경우
-			String prefix = "/WEB-INF/views/whistle";
+			String prefix = "/WEB-INF/views";
 			String surfix = ".jsp";
 			
 			RequestDispatcher rd = req.getRequestDispatcher(prefix + view + surfix);

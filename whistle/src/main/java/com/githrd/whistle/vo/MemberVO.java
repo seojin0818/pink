@@ -1,9 +1,14 @@
 package com.githrd.whistle.vo;
 
+import java.text.*;
+import java.sql.Time;
+import java.util.Date;
+
 public class MemberVO {
-	private int mno, ano;
-	private String name, id, pw, sdate, mail, tel, joindate, gen, savename;
-	
+	private int mno, ano, cnt;
+	private String id, name, pw, mail, tel, sdate, savename, gen;
+	private Date jdate;
+	private Time jtime;
 	public int getMno() {
 		return mno;
 	}
@@ -16,17 +21,29 @@ public class MemberVO {
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
-	public String getName() {
-		return name;
+	public int getCnt() {
+		return cnt;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
 	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 	public String getMail() {
 		return mail;
@@ -40,11 +57,16 @@ public class MemberVO {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public String getJoindate() {
-		return joindate;
+	public String getSdate() {
+		return sdate;
 	}
-	public void setJoindate(String joindate) {
-		this.joindate = joindate;
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
+	}
+	public void setSdate() {
+		SimpleDateFormat form1 = new SimpleDateFormat("yyyy년 MM월 dd일 ");
+		SimpleDateFormat form2 = new SimpleDateFormat("HH:mm:ss");
+		sdate = form1.format(jdate) + form2.format(jtime);
 	}
 	public String getGen() {
 		return gen;
@@ -58,17 +80,23 @@ public class MemberVO {
 	public void setSavename(String savename) {
 		this.savename = savename;
 	}
-	public String getPw() {
-		return pw;
+	public Date getJdate() {
+		return jdate;
 	}
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setJdate(Date jdate) {
+		this.jdate = jdate;
 	}
-	public String getSdate() {
-		return sdate;
+	public Time getJtime() {
+		return jtime;
 	}
-	public void setSdate(String sdate) {
-		this.sdate = sdate;
+	public void setJtime(Time jtime) {
+		this.jtime = jtime;
 	}
 	
+	@Override
+	public String toString() {
+		return "MemberVO [mno=" + mno + ", ano=" + ano + ", cnt=" + cnt + ", id=" + id + ", name=" + name + ", pw=" + pw
+				+ ", mail=" + mail + ", tel=" + tel + ", sdate=" + sdate + ", savename=" + savename + ", gen=" + gen
+				+ ", jdate=" + jdate + ", jtime=" + jtime + "]";
+	}
 }

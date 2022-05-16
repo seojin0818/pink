@@ -134,7 +134,6 @@ public class MemberDao {
 				// VO가 완성됐으면 리스트에 담고
 				list.add(mVO);
 			}
-			// 리스트에 담고
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -158,7 +157,7 @@ public class MemberDao {
 		String sql = mSQL.getSQL(mSQL.SEL_ID_CNT);
 		// 명령전달도구
 		pstmt = db.getPSTMT(con, sql);
-		try{
+		try {
 			// 질의명령 완성하고
 			pstmt.setString(1, id);
 			// 질의명령 보내고 결과 받고

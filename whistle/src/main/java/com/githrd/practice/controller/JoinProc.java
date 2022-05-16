@@ -1,13 +1,14 @@
-package com.githrd.whistle.controller.member;
+package com.githrd.practice.controller;
 
-import java.io.*;
+import java.io.IOException;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import com.githrd.whistle.controller.BlpInter;
 import com.githrd.whistle.dao.MemberDao;
 import com.githrd.whistle.vo.MemberVO;
+import com.githrd.whistle.controller.BlpInter;
 
 public class JoinProc implements BlpInter {
 
@@ -15,11 +16,13 @@ public class JoinProc implements BlpInter {
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("isRedirect", true);
 		String view = "/whistle/main.blp";
+		// 리다이렉트 세팅
 		if(req.getSession().getAttribute("SID") != null) {
+			// 이미 가입된 아이디인 경우
+			// 세션 검사하고
 			return view;
 		}
 		
-		// 파라미터 받고
 		String name = req.getParameter("name");
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
@@ -29,7 +32,6 @@ public class JoinProc implements BlpInter {
 		String sno = req.getParameter("ano");
 		int ano = Integer.parseInt(sno);
 		
-		// VO에 담고
 		MemberVO mVO = new MemberVO();
 		mVO.setName(name);
 		mVO.setId(id);
@@ -49,6 +51,7 @@ public class JoinProc implements BlpInter {
 			req.getSession().setAttribute("SID", id);
 		}
 		return view;
+		
 	}
 
 }

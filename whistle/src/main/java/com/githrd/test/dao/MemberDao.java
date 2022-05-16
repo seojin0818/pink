@@ -81,7 +81,10 @@ public class MemberDao {
 			mVO.setMail(rs.getString("mail"));
 			mVO.setTel(rs.getString("tel"));
 			mVO.setGen(rs.getString("gen"));
-			mVO.setJoindate(rs.getString("joindate"));
+			mVO.setJdate(rs.getDate("joindate"));
+			mVO.setJtime(rs.getTime("joindate"));
+			mVO.setSdate();
+			// joindate는 Date타입과 Time타입으로 별도로 꺼낸 후 setSdate() 실행
 			mVO.setAno(rs.getInt("ano"));
 			mVO.setSavename(rs.getString("savename"));
 			

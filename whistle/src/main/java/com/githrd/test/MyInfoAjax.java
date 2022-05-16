@@ -39,7 +39,7 @@ public class MyInfoAjax extends HttpServlet {
 		pw.println("\"mail\": \"" + mVO.getMail() + "\",");
 		pw.println("\"tel\": \"" + mVO.getTel() + "\",");
 		pw.println("\"gen\": \"" + mVO.getGen() + "\",");
-		pw.println("\"joindate\": \"" + mVO.getJoindate() + "\",");
+		pw.println("\"joindate\": \"" + mVO.getSdate() + "\",");
 		pw.println("\"ano\": \"" + mVO.getAno() + "\",");
 		pw.println("\"savename\": \"" + mVO.getSavename() + "\"");	
 		pw.println("}");

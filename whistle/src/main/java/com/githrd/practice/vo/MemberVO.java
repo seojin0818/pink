@@ -1,4 +1,4 @@
-package com.githrd.test.vo;
+package com.githrd.practice.vo;
 
 import java.text.*;
 import java.sql.Time;

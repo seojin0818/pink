@@ -50,9 +50,11 @@
 			</div>
 		<form method="GET"
 			style="border: 1px solid gray; text-align: center;" name="frm" id="frm">
-			<div style="padding: 30px; display: inline-block; width: 200px; height: 200px; float: left;">
+		<div class="w3-col w3-display-container" style="width: 300px; height: 350px;">
+			<div class="w3-display-middle" style="width: 170px; height: 185px;">
 			<img width="100%" height="auto" id="box">
 			<h4 class="size">아이디 : <span id="mid"></span></h4>
+		</div>
 			</div>
 			<div style="padding: 20px; display: inline-block; width: 400px; height: 370px; text-align: right;">
 				<h4 class="size">회원번호 : <span id="mmno"></span></h4>
