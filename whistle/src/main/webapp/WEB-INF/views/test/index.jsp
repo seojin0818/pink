@@ -56,7 +56,7 @@
 			<h4 class="size">아이디 : <span id="mid"></span></h4>
 		</div>
 			</div>
-			<div style="padding: 20px; display: inline-block; width: 400px; height: 370px; text-align: right;">
+			<div style="padding: 20px; display: inline-block; width: 300px; height: 370px; text-align: right; margin-bottom: 30px;">
 				<h4 class="size">회원번호 : <span id="mmno"></span></h4>
 				<h4 class="size">회원이름 : <span id="mname"></span></h4>
 				<h4 class="size">메일 : <span id="mmail"></span></h4>
