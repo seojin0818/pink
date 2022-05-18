@@ -38,7 +38,7 @@ public class GBoardWriteProc implements BlpInter {
 			
 			/*
 			 
-			 	// GET 방식
+			// GET 방식
 			return "/whistle/guestBoard/gBoardList.blp?nowPage=" + spage;
 			
 			*/
@@ -56,8 +56,10 @@ public class GBoardWriteProc implements BlpInter {
 		if(result == 0) {
 			
 			/*
+			
 			// 글등록에 실패한 경우
 			return "/whistle/guestBoard/gBoardWrite.blp?nowPage=" + spage;
+			
 			*/
 			
 			// POST 방식 - redirect용 jsp 파일을 이용하는 경우
@@ -70,5 +72,4 @@ public class GBoardWriteProc implements BlpInter {
 		return view;
 	}
 
-	
 }
