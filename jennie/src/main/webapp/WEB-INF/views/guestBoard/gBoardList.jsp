@@ -40,7 +40,7 @@
 			</nav>
 		</header>
 		
-		<!-- 페이지 본문 -->
+		<!-- 페이지 본문  -->
 <c:forEach var="data" items="${LIST}">
 		<div class="w3-col w3-round-large w3-card-4 w3-margin-bottom w3-padding">
 			<div class="w3-col box120 pdAll10 w3-border-right">
