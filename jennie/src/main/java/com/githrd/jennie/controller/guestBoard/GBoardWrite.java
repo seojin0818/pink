@@ -36,7 +36,7 @@ public class GBoardWrite implements BlpInter {
 		BoardVO bVO = gDao.getWriteInfo(sid);
 		req.setAttribute("DATA", bVO);
 		
-		String view = "/guestBoard/gBoardWrite"; // forward 방식으로 뷰를 부르게 되므로 요청객체는 계속 유지됨
+		String view = "/guestBoard/gBoardWrite"; // forward 방식으로 뷰를 부르게 되므로 요청객체는 계속 유지
 		return view;
 	}
 
