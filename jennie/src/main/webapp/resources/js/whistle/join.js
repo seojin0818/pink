@@ -29,7 +29,7 @@ $(document).ready(function(){
 		}
 		// 전달해서 사용가능 유무 판단하고
 		$.ajax({
-			url: '/practice/idCheck.gom',
+			url: '/whistle/member/idCheck.blp',
 			type: 'post',
 			dataType: 'json',
 			data: {
@@ -125,7 +125,7 @@ $(document).ready(function(){
 		
 		*/
 		
-		$('#frm').attr('action', '/practice/joinProc.gom').submit();
+		$('#frm').attr('action', '/whistle/member/joinProc.blp').submit();
 		
 	});
 });

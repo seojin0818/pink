@@ -122,6 +122,39 @@
 # 방명록 리스트 폼 보기 요청
 
 요청내용	: /whistle/guestBoard/gBoardList.blp
-파라미터	: 없음
+파라미터	: [nowPage]
 컨트롤러	: com.githrd.jennie.controller.guestBoard.GuestBoard
 뷰			: /WEB-INF/views/guestBoard/gBoardList.jsp
+
+--------------------------------------------------
+
+# 방명록 글쓰기 폼 보기 요청
+요청내용	: /whistle/guestBoard/gBoardWrite.blp
+파라미터	: nowPage
+컨트롤러	: com.githrd.jennie.controller.guestBoard.GBoardWrite
+뷰			: /WEB-INF/views/guestBoard/gBoardWrite.jsp
+
+--------------------------------------------------
+
+# 방명록 글등록 처리 요청
+요청내용	: /whistle/guestBoard/gBoardWriteProc.blp
+파라미터	: body, nowPage (에러가 난 경우 글쓰기 폼을 다시 보여줘야 하므로)
+컨트롤러	: com.githrd.jennie.controller.guestBoard.GBoardWriteProc
+뷰			: redirect ]
+					성공 : /whistle/guestBoard/gBoardList.blp
+					실패 : /whistle/guestBoard/gBoardWrite.blp?nowPage=?
+
+--------------------------------------------------
+
+===================================================
+################# 댓글게시판 요청 설계 ################
+===================================================
+
+# 댓글게시판 리스트 폼 보기 요청
+
+요청내용	: /whistle/reboard/reboardList.blp
+파라미터	: [nowPage]
+컨트롤러	: com.githrd.jennie.controller.reboard.ReboardList
+뷰			: /WEB-INF/views/reboard/reboardList.jsp
+
+--------------------------------------------------

@@ -28,4 +28,9 @@
 	$('#gbtn').click(function(){
 		$(location).attr('href', '/whistle/guestBoard/gBoardList.blp');
 	});
+	
+	// 댓글게시판 버튼 클릭이벤트
+	$('#rbtn').click(function(){
+		$(location).attr('href', '/whistle/reboard/reboardList.blp');
+	});
 });

@@ -15,7 +15,7 @@ public class GuestBoard implements BlpInter {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String view = "/guestboard/gBoardList";
+		String view = "/guestBoard/gBoardList";
 		
 		// 현재 보고 있는 페이지
 		String spage = req.getParameter("nowPage");

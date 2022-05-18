@@ -4,6 +4,9 @@ public class GBoardSQL {
 	public final int SEL_GBRD_LIST		= 		1001;
 	public final int SEL_WRITE_COUNT 	=		1002;
 	public final int SEL_TOTAL_CNT		=	 	1003;
+	public final int SEL_WRITER_INFO	= 1004;
+	
+	public final int INSERT_GBOARD		=		3001;
 	
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
@@ -55,6 +58,25 @@ public class GBoardSQL {
 			buff.append("	guestboard ");
 			buff.append("WHERE ");
 			buff.append("	isshow = 'Y' ");
+			break;
+		case SEL_WRITER_INFO:
+			buff.append("SELECT ");
+			buff.append("	mno, savename ");
+			buff.append("FROM ");
+			buff.append("	member m, avatar a ");
+			buff.append("WHERE ");
+			buff.append("	m.isshow ='Y' ");
+			buff.append("	AND avt = ano ");
+			buff.append("	AND id = ? ");
+			break;
+		case INSERT_GBOARD:
+			buff.append("INSERT INTO ");
+			buff.append("   guestboard(gno, writer, body) ");
+			buff.append("VALUES( ");
+			buff.append("   (SELECT NVL(MAX(gno) + 1, 1001) from guestboard), ");
+			buff.append("   (SELECT mno FROM member WHERE id = ?), ");
+			buff.append("    ? ");
+			buff.append(") ");
 			break;
 		}
 		return buff.toString();

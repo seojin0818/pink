@@ -71,7 +71,7 @@ public class GBoardDao {
 				bVO.setRno(rno);
 				bVO.setBno(bno);
 				bVO.setId(id);
-				bVO.setBody(body);
+				bVO.setBody(body.replaceAll("\r\n", "<br>"));
 				bVO.setAvatar(avatar);
 				bVO.setWdate(wdate);
 				bVO.setWtime(wtime);
@@ -150,6 +150,74 @@ public class GBoardDao {
 			db.close(con);
 		}
 		// 결과 반환해주고
+		return cnt;
+	}
+	
+	// 작성자 정보 조회 전담 처리함수
+	public BoardVO getWriteInfo(String id) {
+		// 반환값 변수
+		BoardVO bVO = new BoardVO();
+		
+		// 커넥션
+		con = db.getCon();
+		
+		// 질의명령
+		String sql = gSQL.getSQL(gSQL.SEL_WRITER_INFO);
+		
+		// 명령전달도구
+		pstmt = db.getPSTMT(con, sql);
+		
+		try {
+			// 질의명령 완성하고
+			pstmt.setString(1, id);
+			
+			// 질의명령 보내고 결과 받고
+			rs = pstmt.executeQuery();
+			
+			// 데이터 꺼내서 VO에 담고
+			rs.next();
+			bVO.setMno(rs.getInt("mno"));
+			bVO.setAvatar(rs.getString("savename"));
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		// VO 반환하고
+		return bVO;
+	}
+	
+	// 게시글 데이터베이스 등록 전담 처리함수
+	public int addGBoard(String id, String body) {
+		// 반환값 변수
+		int cnt = 0;
+		
+		// 커넥션
+		con = db.getCon();
+		
+		// 질의명령
+		String sql = gSQL.getSQL(gSQL.INSERT_GBOARD);
+		
+		// 명령전달도구
+		pstmt = db.getPSTMT(con, sql);
+		
+		try {
+			// 질의명령 완성하고
+			pstmt.setString(1, id);
+			pstmt.setString(2, body);
+			
+			// 질의명령 보내고 결과 받고
+			cnt = pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		
+		// 데이터 반환하고
 		return cnt;
 	}
 }

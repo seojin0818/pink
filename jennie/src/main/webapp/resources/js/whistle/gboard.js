@@ -23,4 +23,16 @@ $(document).ready(function(){
 		$('#nowPage').val(page);
 		$('#frm').submit();
 	});
+	
+	$('#wbtn').click(function(){
+		/*
+		// get 방식으로 요청
+		$(location).attr('href', '/whistle/guestBoard/gBoardWrite.blp?nowPage=' + $('#nowPage').val());
+		// ==> 3페이지를 보는 경우 : /whistle/guestBboard/gBoardWrite.blp?nowPage=3
+		*/
+		
+		// post 방식으로 요청
+		$('#frm').attr('action', '/whistle/guestBoard/gBoardWrite.blp');
+		$('#frm').submit();
+	});
 });

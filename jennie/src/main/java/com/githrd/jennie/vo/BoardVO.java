@@ -5,7 +5,7 @@ import java.util.Date;
 import java.text.*;
 
 public class BoardVO {
-	private int mno, bno, rno, ano, cnt;
+	private int mno, bno, upno, rno, ano, cnt, step;
 	private String id, title, body, sdate, avatar;
 	private Date wdate;
 	private Time wtime;
@@ -21,6 +21,18 @@ public class BoardVO {
 	}
 	public void setBno(int bno) {
 		this.bno = bno;
+	}
+	public int getUpno() {
+		return upno;
+	}
+	public void setUpno(int upno) {
+		this.upno = upno;
+	}
+	public int getStep() {
+		return step;
+	}
+	public void setStep(int step) {
+		this.step = step;
 	}
 	public int getRno() {
 		return rno;
@@ -90,8 +102,9 @@ public class BoardVO {
 	
 	@Override
 	public String toString() {
-		return "BoardVO {mno=" + mno + ", bno=" + bno + ", rno=" + rno + ", ano=" + ano + ", cnt=" + cnt + ", id=" + id
-				+ ", title=" + title + ", body=" + body + ", sdate=" + sdate + ", avatar=" + avatar + ", wdate=" + wdate
-				+ ", wtime=" + wtime + "}";
+		return "BoardVO [mno=" + mno + ", bno=" + bno + ", upno=" + upno + ", rno=" + rno + ", ano=" + ano + ", cnt="
+				+ cnt + ", step=" + step + ", id=" + id + ", title=" + title + ", body=" + body + ", sdate=" + sdate
+				+ ", avatar=" + avatar + ", wdate=" + wdate + ", wtime=" + wtime + "]";
 	}
+
 }
