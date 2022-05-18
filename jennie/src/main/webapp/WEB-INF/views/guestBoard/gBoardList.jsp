@@ -13,7 +13,6 @@
 	.w3-button {
 		padding: 1px 16px;
 	}
-	
 	.box120 {
 		width: 135px;
 	}
