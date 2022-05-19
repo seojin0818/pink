@@ -16,7 +16,7 @@
 <c:if test="${not empty VIEW}">
 	<form method="POST" action="${VIEW}" id="frm" name="frm">
 <c:if test="${not empty NOWPAGE}">
-		<input type="hidden" name="nowPage" value="${NOWPAGE}"> <!-- NOWPAGE를 ${VIEW}객체에 심겠다는 의미 -->
+		<input type="hidden" name="nowPage" value="${NOWPAGE}"> <!-- NOWPAGE를 ${VIEW} 객체에 심겠다는 의미 -->
 </c:if>
 	</form>
 </c:if>

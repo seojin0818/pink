@@ -71,5 +71,4 @@ public class GBoardWriteProc implements BlpInter {
 		// 뷰 내보내고
 		return view;
 	}
-
 }

@@ -4,7 +4,7 @@ public class GBoardSQL {
 	public final int SEL_GBRD_LIST		= 		1001;
 	public final int SEL_WRITE_COUNT 	=		1002;
 	public final int SEL_TOTAL_CNT		=	 	1003;
-	public final int SEL_WRITER_INFO	= 1004;
+	public final int SEL_WRITER_INFO	= 		1004;
 	
 	public final int INSERT_GBOARD		=		3001;
 	

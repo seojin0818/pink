@@ -216,7 +216,6 @@ public class GBoardDao {
 			db.close(pstmt);
 			db.close(con);
 		}
-		
 		// 데이터 반환하고
 		return cnt;
 	}
