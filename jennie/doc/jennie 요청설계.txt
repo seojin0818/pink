@@ -179,6 +179,7 @@
 								/whistle/reboard/reboardWrite.blp
 				
 --------------------------------------------------			
+
 # 댓글게시판 댓글쓰기 폼 보기 요청
 
 요청내용	: /whistle/reboard/reboardComment.blp
@@ -187,6 +188,7 @@
 뷰			: /WEB-INF/views/reboard/reboardComment.jsp
 				
 --------------------------------------------------
+
 # 댓글게시판 댓글등록 처리 요청
 
 요청내용	: /whistle/reboard/reboardWriteProc.blp
@@ -199,6 +201,7 @@
 									/whistle/reboard/reboardWrite.blp
 				
 --------------------------------------------------
+
 # 댓글게시판 글삭제 처리 요청
 
 요청내용	: /whistle/reboard/reboardDel.blp
@@ -209,6 +212,7 @@
 								/whistle/reboard/reboardList.blp
 				
 --------------------------------------------------
+
 # 댓글게시판 수정 폼 보기 요청
 
 요청내용	: /whistle/reboard/reboardEdit.blp
@@ -217,6 +221,7 @@
 뷰			: /WEB-INF/views/reboard/reboardEdit.jsp
 				
 --------------------------------------------------
+
 # 댓글게시판 수정 처리 요청
 
 요청내용	: /whistle/reboard/reboardWriteProc.blp
