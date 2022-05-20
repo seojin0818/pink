@@ -33,4 +33,9 @@
 	$('#rbtn').click(function(){
 		$(location).attr('href', '/whistle/reboard/reboardList.blp');
 	});
+	
+	// 파일게시판 버튼 클릭이벤트
+	$('#fbtn').click(function(){
+		$(location).attr('href', '/whistle/board/boardList.blp');
+	});
 });

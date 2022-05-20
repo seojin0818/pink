@@ -218,5 +218,6 @@ public class GBoardDao {
 		}
 		// 데이터 반환하고
 		return cnt;
+		
+		}
 	}
-}
