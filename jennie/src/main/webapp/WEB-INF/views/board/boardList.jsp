@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<title>BlackPink 댓글게시판</title>
+<title>BlackPink 게시판 리스트</title>
 <link rel="stylesheet" type="text/css" href="/whistle/resources/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/whistle/resources/css/user.css">
 <script type="text/javascript" src="/whistle/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/whistle/resources/js/whistle/board.js"></script>
 <style type="text/css">
 	html, body {
 		height: 100%;
@@ -18,22 +18,16 @@
 	.w3-button {
 		padding: 1px 16px;
 	}
-	.box120 {
-		width: 135px;
-		height: auto;
-	}
 	.mid {
 		position: relative;
 		top: 5px;
 		right: 5px;
 	}
+	.brdList {
+		cursor: pointer;
+	}
 </style>
 <script type="text/javascript">
-	$(document).ready(function(){
-		$('#wbtn').click(function(){
-			$(location).attr('href', '/whistle/board/boardWrite.blp');
-		});
-	});
 </script>
 </head>
 <body class="w3-light-grey">
@@ -54,7 +48,7 @@
 			</nav>
 		</header>
 		
-		<div class="w3-col w3-white w3-padding w3-card-4">
+		<div class="w3-col w3-white w3-card-4 w3-round-large pd15">
 			
 			<div class="w3-col w3-light-grey w3-center w3-border">
 				<div class="w3-col m3">
@@ -66,18 +60,18 @@
 				<div class="w3-col m1 w3-border-right">클릭수</div>
 				<div class="w3-col m1">파일</div>
 			</div>
-			
-			<div class="w3-col w3-white w3-center w3-border-bottom w3-border-left w3-border-right">
+<c:forEach var="data" items="${LIST}">
+			<div class="w3-col w3-white w3-hover-blue w3-center w3-border-bottom w3-border-left w3-border-right brdList" id="${data.bno}">
 				<div class="w3-col m3">
-					<div class="w3-col m5 w3-border-right">100001</div>
-					<div class="w3-col m7 w3-border-right">작성자</div>
+					<div class="w3-col m5 w3-border-right">${data.bno}</div>
+					<div class="w3-col m7 w3-border-right">${data.id }</div>
 				</div>
-				<div class="w3-col m4 w3-border-right">글제목</div>
-				<div class="w3-col m3 w3-border-right">작성일</div>
-				<div class="w3-col m1 w3-border-right">클릭수</div>
-				<div class="w3-col m1">파일</div>
+				<div class="w3-col m4 w3-border-right">${data.title}</div>
+				<div class="w3-col m3 w3-border-right">${data.sdate}</div>
+				<div class="w3-col m1 w3-border-right">${data.click}</div>
+				<div class="w3-col m1">${data.cnt}</div>
 			</div>
-			
+</c:forEach>
 		</div>
 		
 		<!-- 페이지 처리 시작 -->
@@ -106,7 +100,9 @@
 			</div>
 		</div>
 		<!-- 페이지 처리 태그 끝 -->
-		
+		<form method="POST" action="/whistle/board/boardList.blp" id="pageFrm" name="pageFrm">
+			<input type="hidden" name="nowPage" id="nowPage" value="${PAGE.nowPage}">
+		</form>
 	</div>
 </body>
 </html>

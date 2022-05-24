@@ -21,13 +21,11 @@
 }
 
 /* 디스플레이 */
-
 .inblock {
 	display: inline-block;
 }
 
 /* 마진 클래스 */
-
 .mg0 {
 	margin: 0px;
 }
@@ -54,7 +52,6 @@
 }
 
 /* 패딩 클래스*/
-
 .pdAll10 {
 	padding: 10px;
 }
@@ -78,7 +75,6 @@
 }
 
 /* size */
-
 .w250 {
 	width: 250px;
 }
@@ -223,10 +219,6 @@
 	font-weight: bold;
 }
 
-.inblock {
-	display: inline-block;
-}
-
 .w200 {
 	width: 200px;
 }
@@ -252,6 +244,9 @@
 .pdr10 {
 	padding-right: 10px;
 }
+.pdr20 {
+	padding-right: 20px;
+}
 
 .pdl10 {
 	padding-left: 10px;
@@ -269,6 +264,14 @@
 	padding: 10px;
 }
 
+.pd15 {
+	padding: 15px;
+}
+
+.pd20 {
+	padding: 20px;
+}
+
 .pdh1 {
 	padding: 0px 1px;
 }
@@ -279,6 +282,22 @@
 
 .pdh10 {
 	padding: 0px 5px;
+}
+
+.pdh20 {
+	padding: 0px 20px;
+}
+
+.pdh50 {
+	padding: 0px 50px;
+}
+
+.frmpadding{
+	padding: 20px 50px 20px 10px;
+}
+
+.pd20-50 {
+	padding: 20px 50px;
 }
 
 .clslbl {
@@ -296,6 +315,18 @@
 .imgsrc {
 	width: 100px;
 	height: 100px;
+}
+
+.picbox {
+	width: 100px;
+	height: 100px;
+	margin-left: 10px;
+	border: 1px solid gray;
+	overflow: hidden;
+}
+.pic {
+	width: 100px;
+	height: auto;
 }
 
 .mt0 {

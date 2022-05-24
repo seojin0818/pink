@@ -234,3 +234,28 @@
 									/whistle/reboard/reboardEdit.blp
 				
 --------------------------------------------------
+
+===================================================
+################# 파일게시판 요청 설계 ################
+===================================================
+
+# 
+요청내용	: /whistle/board/boardList.blp
+파라미터	: nowPage
+컨트롤러	: com.githrd.controller.board.BoardList
+뷰			: /WEB-INF/views/board/boardList.jsp
+
+#
+요청내용	: /whistle/board/boardWrite.blp
+파라미터	: nowPage
+컨트롤러	: com.githrd.controller.board.BoardWrite
+뷰			: /WEB-INF/views/board/boardWrite.jsp
+
+#
+요청내용	: /whistle/board/boardWriteProc.blp
+파라미터	: nowPage, mno, body
+컨트롤러	: com.githrd.controller.board.BoardWriteProc
+뷰			: redirect ]
+					성공] /whistle/board/boardList.jsp
+					실패] ==> forward] redirect.jsp
+									/whistle/board/boardWrite.blp
