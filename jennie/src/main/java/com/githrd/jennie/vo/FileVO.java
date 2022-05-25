@@ -5,12 +5,23 @@ import java.util.Date;
 import java.text.*;
 
 public class FileVO {
-	private int fno, mno, rno, cnt;
+	private int bno, fno, mno, rno, cnt;
 	private long len;
-	private String oriname, savename, dir, sdate, stime;
+	private String id, oriname, savename, dir, sdate, stime;
 	private Date wdate;
 	private Time wtime;
-	
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public int getFno() {
 		return fno;
 	}
@@ -93,12 +104,16 @@ public class FileVO {
 		this.wtime = wtime;
 		setStime();
 	}
-	
 	@Override
 	public String toString() {
 		return "FileVO [fno=" + fno + ", mno=" + mno + ", rno=" + rno + ", cnt=" + cnt + ", len=" + len + ", oriname="
 				+ oriname + ", savename=" + savename + ", dir=" + dir + ", sdate=" + sdate + ", stime=" + stime
-				+ ", wdate=" + wdate + ", wtime=" + wtime + "]";
+				+ ", wdate=" + wdate + ", wtime=" + wtime + ", getFno()=" + getFno() + ", getMno()=" + getMno()
+				+ ", getRno()=" + getRno() + ", getCnt()=" + getCnt() + ", getLen()=" + getLen() + ", getOriname()="
+				+ getOriname() + ", getSavename()=" + getSavename() + ", getDir()=" + getDir() + ", getSdate()="
+				+ getSdate() + ", getStime()=" + getStime() + ", getWdate()=" + getWdate() + ", getWtime()="
+				+ getWtime() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
 	
 }

@@ -239,21 +239,21 @@
 ################# 파일게시판 요청 설계 ################
 ===================================================
 
-# 
+# 파일게시판 리스트 폼보기 요청
 요청내용	: /whistle/board/boardList.blp
 파라미터	: nowPage
 컨트롤러	: com.githrd.controller.board.BoardList
 뷰			: /WEB-INF/views/board/boardList.jsp
 
-#
+# 파일게시판 글쓰기 폼보기 요청
 요청내용	: /whistle/board/boardWrite.blp
 파라미터	: nowPage
 컨트롤러	: com.githrd.controller.board.BoardWrite
 뷰			: /WEB-INF/views/board/boardWrite.jsp
 
-#
+# 파일게시판 글등록 처리 요청
 요청내용	: /whistle/board/boardWriteProc.blp
-파라미터	: nowPage, mno, body
+파라미터	: nowPage, title, body, [file]
 컨트롤러	: com.githrd.controller.board.BoardWriteProc
 뷰			: redirect ]
 					성공] /whistle/board/boardList.jsp

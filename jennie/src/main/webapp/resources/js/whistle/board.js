@@ -32,7 +32,8 @@ $(document).ready(function(){
 	});
 	
 	$('#wbtn').click(function(){
-		$(location).attr('href', '/whistle/board/boardWrite.blp');
+		$('#pageFrm').attr('action', '/whistle/board/boardWrite.blp');
+		$('#pageFrm').submit();
 	});
 	
 	$('#filebox').on('change', '.upfile', function(e){

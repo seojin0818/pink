@@ -44,6 +44,14 @@ public class FileUtil {
 		path = this.getClass().getResource("/").getPath();
 		path = path.substring(0, path.lastIndexOf("/WEB-INF")) + dir;
 		
+		/*
+		 	
+		 	path 경로
+		 		==> 첨부하는 파일을 이 프로젝트에서 서비스하는 경우에는
+		 			path = req.getSession().getServletContext().getRealPath("upload");
+		 			
+		 */
+		
 		try {
 			multi = new MultipartRequest(req, path, 1024 * 1024 * 10, "UTF-8", new FileRenamePolicy() {
 				
@@ -135,6 +143,43 @@ public class FileUtil {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public ArrayList<FileVO> getList() {
+		return list;
+	}
+	public void setList(ArrayList<FileVO> list) {
+		this.list = list;
+	}
+	public HttpServletRequest getReq() {
+		return req;
+	}
+	public void setReq(HttpServletRequest req) {
+		this.req = req;
+	}
+	public MultipartRequest getMulti() {
+		return multi;
+	}
+	public void setMulti(MultipartRequest multi) {
+		this.multi = multi;
+	}
+	public String getDir() {
+		return dir;
+	}
+	public void setDir(String dir) {
+		this.dir = dir;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
+	public String getbPath() {
+		return bPath;
+	}
+	public void setbPath(String bPath) {
+		this.bPath = bPath;
 	}
 	
 }
