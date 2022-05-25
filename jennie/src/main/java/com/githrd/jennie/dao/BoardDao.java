@@ -88,7 +88,6 @@ public class BoardDao {
 		if(cnt != bVO.getList().size()) {
 			return -1;
 		}
-		System.out.println("###"+cnt);
 		return cnt;
 	}
 	

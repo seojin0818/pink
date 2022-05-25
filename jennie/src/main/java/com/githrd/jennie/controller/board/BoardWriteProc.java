@@ -71,7 +71,6 @@ public class BoardWriteProc implements BlpInter {
 		bVO.setBody(body);
 		bVO.setList(list);
 		
-		System.out.println(bVO);
 		BoardDao bDao = new BoardDao();
 		int cnt = bDao.insertBoardData(bVO);
 		if(cnt == -1 || cnt != bVO.getList().size()) {
