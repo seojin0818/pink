@@ -112,6 +112,7 @@ public class FileUtil {
 			
 			// VO 만들고
 			FileVO fVO = new FileVO();
+			fVO.setId((String) req.getSession().getAttribute("SID"));
 			fVO.setOriname(oriname);
 			fVO.setSavename(savename);
 			fVO.setDir(dir);

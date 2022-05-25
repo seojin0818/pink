@@ -27,6 +27,7 @@ public class BoardDao {
 		int cnt = 0;
 		con = db.getCon();
 		String sql = bSQL.getSQL(bSQL.INSERT_FILEINFO);
+		System.out.println(sql);
 		pstmt = db.getPSTMT(con, sql);
 		try {
 			pstmt.setString(1, fVO.getId());
